@@ -1,34 +1,14 @@
-/* global React ReactDOM */
-const Pet = (props) => {
-    return React.createElement("div", {}, [
-        React.createElement("h1", {}, props.name),
-        React.createElement("h2", {}, props.animal),
-        React.createElement("h2", {}, props.breed)
-    ])
-}
+import { render } from 'react-dom'; //it is the same as say: import ReactDOM from 'react-dom';
+//if you use the alternative one, do you have to write the ReactDOM.render below.
+import SearchParams from './SearchParams';
 
 const App = () => {
-    return React.createElement(
-        "div",
-        {}, 
-        [
-        React.createElement("h1", {}, "Adopt Me!"),
-        React.createElement(Pet, {
-            name: "Azabache",
-            animal: "Dog",
-            breed: "Alsatian"
-        }),
-        React.createElement(Pet, {
-            name: "Pandora",
-            animal: "Cat",
-            breed: "Mixed"
-        }),
-        React.createElement(Pet, {
-            name: "Panchita",
-            animal: "Dog",
-            breed: "Mixed"
-        })
-    ])
-}
+    return (
+    <div>
+        <h1>Adopt Me!</h1>
+        <SearchParams /> 
+    </div>
+    );
+};
 
-ReactDOM.render(React.createElement(App), document.getElementById("root"))
+render(<App />, document.getElementById("root"))
